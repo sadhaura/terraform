@@ -25,32 +25,31 @@ Must have aws secret key and access key
 Clone the repository from url:-
 
   git clone https://github.com/sadhaura/terraform.git  
+  
+  change the directory create ec2 instance with below command
+  
+ 1. cd create ec2 instance
 
-  Change aws access key and secret key detail of your aws account in var.tf
+   Change aws access key and secret key detail of your aws account in var.tf
 
-  I have also mentioned aws region detail in var.tf.
-
-  Run the below command 
-
-1. cd create ec2 instance 
-
-   Run the below command
-
+   Run the below command for terraform initialization.
+   
 2. terraform init
 
-     it will download neccessary plugins for terraform and initialize the terraform
+   it will download neccessary plugins for terraform and initialize the terraform
 
-   Run the below command 
+   Run the below command for terraform apply 
+   
+   it will ask a value put yes in value field
+   
+   only yes will be accepted
 
 3. terraform apply
-
-   it will ask a value put yes in value field 
-
-   only yes will be accepted
 
    It will create ec2 instance  of instance type t2.micro in specified region with name testTag.
 
    if you want to delete all resources mentioned in myresources.tf then simply  
+   
    Run the command
  
 4. terraform destroy
