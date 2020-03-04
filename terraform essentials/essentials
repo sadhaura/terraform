@@ -203,3 +203,37 @@ resource "aws_instance" "example" {
 This introduces a new type of interpolation: a function call. The lookup function does a dynamic lookup in a map for a key. The key is "var.region", which specifies that the value of the region variables is the key.
 
 this will create a instance in specific region what we have mentioned.
+
+
+
+
+import
+Import - https://www.terraform.io/docs/import/
+
+Terraform is able to import existing infrastructure. This allows us take resources we've created by some other means (i.e. via console) and bring it under Terraform management.
+
+This is a great way to slowly transition infrastructure to Terraform.
+
+The terraform import command is used to import existing infrastructure.
+
+To import a resource, first write a resource block for it in our configuration, establishing the name by which it will be known to Terraform. For example:
+
+
+resource "aws_instance" "import_example" {
+  # ...instance configuration...
+}
+
+
+Now terraform import can be run to attach an existing instance to this resource configuration:
+
+
+$ terraform import aws_instance.import_example i-03efafa258104165f
+aws_instance.import_example: Importing from ID "i-03efafa258104165f"...
+aws_instance.import_example: Import complete!
+  Imported aws_instance (ID: i-03efafa258104165f)
+aws_instance.import_example: Refreshing state... (ID: i-03efafa258104165f)
+
+Import successful!
+
+The resources that were imported are shown above. These resources are now in
+your Terraform state and will henceforth be managed by Terraform.
