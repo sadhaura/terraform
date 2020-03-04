@@ -24,9 +24,9 @@ Must have aws secret key and access key
 
 Clone the repository from url:-
 
-  git clone https://github.com/sadhaura/terraform.git  
+   git clone https://github.com/sadhaura/terraform.git  
   
-  change the directory create ec2 instance with below command
+   change the directory create ec2 instance with below command
   
  1. cd create ec2 instance
 
